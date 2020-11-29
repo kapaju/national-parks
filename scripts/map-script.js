@@ -1,17 +1,17 @@
 // Create map using Leaflet.js-functions
 function createMap() {
 
+  // Initialize map. View set defines area and default zoom.
   let myMap = L.map('map-id').setView([65.5, 26.8], 5);
 
-
+  // Add tile layer to our map using Open street maps.
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 15,
       minZoom: 5
   }).addTo(myMap);
 
-
-
+  // Helper function for defining content of each popup on the map.
   function onEachFeature(feature, layer) {
     layer.bindPopup(
       '<h2>' + feature.properties.nimi + '</h2>' + '<p>Perustettu: ' + feature.properties.perustamisvuosi
@@ -20,17 +20,22 @@ function createMap() {
     );
   }
 
+  // Base styles for circle markers.
   let markerStyle = {
-    color: "#330033",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.9
+    color: "#003310",
+    weight: 1.5,
+    opacity: 0.8,
+    fillOpacity: 0.8
   };
     
+  // Fetch geoJSON data from local directory and add it to the map.
   fetch("/data/parkdata.geojson")
     .then(response => {
       return response.json();
     })
+    /* When data has loaded, add markers and popups. Styles are applied
+     * to circle markers based on feature property 'kavijat'.
+     */
     .then(data => {
       L.geoJSON(data, {
         style: function (feature) {
@@ -53,8 +58,6 @@ function createMap() {
         onEachFeature: onEachFeature
       }).addTo(myMap)  
     });
-
-
 }
 
 createMap();
