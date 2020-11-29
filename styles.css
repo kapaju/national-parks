@@ -36,3 +36,9 @@ html, body{
   margin-top: 0;
   margin-bottom: 10px;
 }
+
+#map-source {
+  font-family: 'News Cycle', sans-serif;
+  font-size: 1em;
+  margin-top: 0;
+}
