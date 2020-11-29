@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Suomen kansallispuistot</title>
+
+  <!-- Our Own stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Import Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+
+  <!-- Import Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
+
+  <!-- Import Google fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=News+Cycle&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+
+  <div id="container">
+    <div id="intro">
+      <h1 id="map-heading">Kansallispuistot kartalla</h1>
+      <p id="map-text">Suomessa sijaitsee 40 kansallispuistoa. 
+        Kartalta näet puistojen perustamisvuodet, koon (km²) ja vuoden 2019 kävijämäärät.
+        Mitä suositumpi puisto, sen isompana se näkyy kartalla.
+      </p>
+    </div>
+    <!-- Container for map -->
+    <div id="map-id"></div> 
+
+  </div>
+
+  <!-- Our own JS script -->
+  <script type="text/javascript" src="/scripts/map-script.js"></script>
+</body>
+</html>
